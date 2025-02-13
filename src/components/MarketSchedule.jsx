@@ -10,10 +10,11 @@ const MarketSchedule = () => {
         {name: "Iloffa", openDay: 0},
         {name: "Kajola", openDay: 0},
         {name: "Offa", openDay: 1},
-        {name: "Egbe", openDay: ''},
-        {name: "Ganmo", openDay: ''},
-        {name: "Otun-Ekiti", openDay: ''},
-        {name: "Ekan", openDay: ''}
+        {name: "Egbe", openDay: 3},
+        {name: "Ganmo", openDay: 3},
+        {name: "Otun-Ekiti", openDay: 1},
+        {name: "Ayedun", openDay: 0},
+        {name: "Eruku", openDay: 1}
       ];
       
       const getCurrentDay = () => {
