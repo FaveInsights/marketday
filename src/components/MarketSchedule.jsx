@@ -15,6 +15,9 @@ const MarketSchedule = () => {
     { name: "Iloffa", openDay: 3 }, // Day 3
     { name: "Kajola", openDay: 3 }, // Day 3
     { name: "Ayedun", openDay: 3 }, // Day 3
+    { name: "Offa", openDay: 4 }, // Day 4
+    { name: "Otun-Ekiti", openDay: 4 }, // Day 4
+    { name: "Eruku", openDay: 4 }, // Day 4
   ];
 
   // Track the current day in the 5-day cycle
@@ -37,7 +40,9 @@ const MarketSchedule = () => {
 
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
-
+  
+ // console.log("Today's Markets:", todayMarkets);
+  //console.log("Tomorrow's Markets:", tomorrowMarkets);
   return (
     <div className="p-4 bg-gray-100 rounded-lg shadow-md">
       <h1 className="text-2xl font-bold mb-4">Market Days</h1>
@@ -60,6 +65,12 @@ const MarketSchedule = () => {
             </li>
           ))}
         </ul>
+        {/* <button onClick={() => setCurrentCycleDay((prev) => (prev + 1) % 5)}>
+  Next Day
+</button>
+<button onClick={() => setCurrentCycleDay((prev) => (prev - 1 + 5) % 5)}>
+  Previous Day
+</button> */}
       </div>
     </div>
   );
