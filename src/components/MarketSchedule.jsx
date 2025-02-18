@@ -3,18 +3,18 @@ import React from "react";
 const MarketSchedule = () => {
 
     const markets = [
-        {name: "Obada", openDay: 2},
-        {name: "Oro", openDay: 2},
-        {name: "Omu-Aran", openDay:3},
-        {name: "Osi", openDay: 3},
-        {name: "Iloffa", openDay: 0},
-        {name: "Kajola", openDay: 0},
-        {name: "Offa", openDay: 1},
-        {name: "Egbe", openDay: 3},
-        {name: "Ganmo", openDay: 3},
-        {name: "Otun-Ekiti", openDay: 1},
-        {name: "Ayedun", openDay: 0},
-        {name: "Eruku", openDay: 1}
+        {name: "Obada", openDay: 2+1},
+        {name: "Oro", openDay: 2+1},
+        {name: "Omu-Aran", openDay:3+1},
+        {name: "Osi", openDay: 3+1},
+        {name: "Iloffa", openDay: 0+1},
+        {name: "Kajola", openDay: 0+1},
+        {name: "Offa", openDay: 1+1},
+        {name: "Egbe", openDay: 3+1},
+        {name: "Ganmo", openDay: 3+1},
+        {name: "Otun-Ekiti", openDay: 1+1},
+        {name: "Ayedun", openDay: 0+1},
+        {name: "Eruku", openDay: 1+1}
       ];
       
       const getCurrentDay = () => {
@@ -22,7 +22,7 @@ const MarketSchedule = () => {
       };
       
       const getMarketsForDay = (day) => {
-        return markets.filter((market) => market.openDay === day % 4);
+        return markets.filter((market) => market.openDay === day % 5);
       };
       
   const currentDay = getCurrentDay();
