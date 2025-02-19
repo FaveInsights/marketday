@@ -15,22 +15,19 @@ const MarketSchedule = () => {
     { name: "Iloffa", openDay: 3 }, // Day 3
     { name: "Kajola", openDay: 3 }, // Day 3
     { name: "Ayedun", openDay: 3 }, // Day 3
-    { name: "Offa", openDay: 4 }, // Day 4
-    { name: "Otun-Ekiti", openDay: 4 }, // Day 4
-    { name: "Eruku", openDay: 4 }, // Day 4
   ];
 
   // Track the current day in the 5-day cycle
-  const [currentCycleDay, setCurrentCycleDay] = useState(0);
+  const [currentCycleDay, setCurrentCycleDay] = useState(1); // Start at Day 1 (Oro and Obada)
 
   // Get markets for a specific day in the 5-day cycle
   const getMarketsForDay = (day) => {
-    return markets.filter((market) => market.openDay === day);
+    return markets.filter((market) => market.openDay === day % 5);
   };
 
   // Get today's and tomorrow's markets
   const todayMarkets = getMarketsForDay(currentCycleDay);
-  const tomorrowMarkets = getMarketsForDay((currentCycleDay + 1) % 5);
+  const tomorrowMarkets = getMarketsForDay(currentCycleDay + 1);
 
   // Simulate the passage of time (e.g., update the cycle day every 24 hours)
   useEffect(() => {
@@ -40,9 +37,7 @@ const MarketSchedule = () => {
 
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
-  
- // console.log("Today's Markets:", todayMarkets);
-  //console.log("Tomorrow's Markets:", tomorrowMarkets);
+
   return (
     <div className="p-4 bg-gray-100 rounded-lg shadow-md">
       <h1 className="text-2xl font-bold mb-4">Market Days</h1>
@@ -65,12 +60,6 @@ const MarketSchedule = () => {
             </li>
           ))}
         </ul>
-        {/* <button onClick={() => setCurrentCycleDay((prev) => (prev + 1) % 5)}>
-  Next Day
-</button>
-<button onClick={() => setCurrentCycleDay((prev) => (prev - 1 + 5) % 5)}>
-  Previous Day
-</button> */}
       </div>
     </div>
   );
