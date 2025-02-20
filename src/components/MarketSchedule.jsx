@@ -18,7 +18,7 @@ const MarketSchedule = () => {
   ];
 
   // Track the current day in the 5-day cycle
-  const [currentCycleDay, setCurrentCycleDay] = useState(1); // Start at Day 1 (Oro and Obada)
+  const [currentCycleDay, setCurrentCycleDay] = useState(2); // Start at Day 2 (Omu-Aran, Ganmo, Osi, Egbe)
 
   // Get markets for a specific day in the 5-day cycle
   const getMarketsForDay = (day) => {
