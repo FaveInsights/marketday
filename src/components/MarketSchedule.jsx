@@ -33,6 +33,9 @@ const MarketSchedule = () => {
     nextDay.setHours(0, 0, 0, 0); // Set time to midnight
   
     const timeUntilNextDay = nextDay - now;
+    
+   //-------------------DEBUGGING//-------------------
+   //const timeUntilNextDay = 5 * 1000;
   
     const interval = setInterval(() => {
       setCurrentDayIndex((prevIndex) => (prevIndex + 1) % marketSequence.length);
