@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 
-const Market = () => {
+const MarketSchedule = () => {
   const marketSequence = [
     ["Offa", "Otun-Ekiti", "Eruku"], 
     ["Obada", "Oro"], 
@@ -9,22 +9,30 @@ const Market = () => {
     ["Iloffa", "Kajola", "Ayedun"]
   ];
 
-  const [currentDayIndex, setCurrentDayIndex] = useState(0);
+  const [currentDayIndex, setCurrentDayIndex] = useState(3);
   const todayMarkets = marketSequence[currentDayIndex];
   const tomorrowMarkets = marketSequence[(currentDayIndex + 1) % marketSequence.length];
 
   useEffect(() => {
+    console.log("useEffect hook executed");
+
     const now = new Date();
     const nextDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
     nextDay.setHours(0, 0, 0, 0);
 
     const timeUntilNextDay = nextDay - now;
 
+    console.log(`Time until next day: ${timeUntilNextDay}ms`);
+
     const interval = setInterval(() => {
+      console.log("Interval executed");
       setCurrentDayIndex((prevIndex) => (prevIndex + 1) % marketSequence.length);
     }, timeUntilNextDay);
 
-    return () => clearInterval(interval);
+    return () => {
+      console.log("Interval cleared");
+      clearInterval(interval);
+    };
   }, [marketSequence]);
 
   return (
@@ -54,4 +62,4 @@ const Market = () => {
   );
 };
 
-export default Market;
+export default MarketSchedule;

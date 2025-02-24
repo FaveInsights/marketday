@@ -1,11 +1,11 @@
 import React from 'react'
-import MarketSchedule from './components/MarketSchedule'
+//import MarketSchedule from './components/MarketSchedule'
 import Market from './components/Market'
 
 const App = () => {
   return (
     <>
-    <MarketSchedule />
+    {/* <MarketSchedule /> */}
     <Market />
     </>
   )
