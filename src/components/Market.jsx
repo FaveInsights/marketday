@@ -9,7 +9,7 @@ const MarketSchedule = () => {
     ["Iloffa", "Kajola", "Ayedun"]
   ];
 
-  const [currentDayIndex, setCurrentDayIndex] = useState(3);
+  const [currentDayIndex, setCurrentDayIndex] = useState(1);
   const todayMarkets = marketSequence[currentDayIndex];
   const tomorrowMarkets = marketSequence[(currentDayIndex + 1) % marketSequence.length];
 
