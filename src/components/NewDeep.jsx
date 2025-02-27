@@ -19,7 +19,7 @@ const NewDeep = () => {
     // Calculate the time until the next midnight
     const now = new Date();
     const midnight = new Date(now);
-    midnight.setHours(0, 0, 0, 0); // Set to next midnight
+    midnight.setHours(0, 0, 0, 0);  // Set to next midnight
     const timeUntilMidnight = midnight - now;
 
     // Set a timeout to start the interval at midnight
