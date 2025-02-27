@@ -1,7 +1,7 @@
 import React from 'react'
 //import MarketSchedule from './components/MarketSchedule'
 import Market from './components/Market'
-import MetaTest from './components/MetaTest'
+//import MetaTest from './components/MetaTest'
 import Deep from './components/Deep'
 import NewDeep from './components/NewDeep'
 
@@ -10,7 +10,6 @@ const App = () => {
     <>
     {/* <MarketSchedule /> */}
     <Market />
-    <MetaTest />
     <Deep />
     <NewDeep />
     </>

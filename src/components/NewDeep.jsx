@@ -19,7 +19,7 @@ const NewDeep = () => {
     // Calculate the time until the next midnight
     const now = new Date();
     const midnight = new Date(now);
-    midnight.setHours(24, 0, 0, 0); // Set to next midnight
+    midnight.setHours(0, 0, 0, 0); // Set to next midnight
     const timeUntilMidnight = midnight - now;
 
     // Set a timeout to start the interval at midnight
@@ -40,7 +40,7 @@ const NewDeep = () => {
     </div>
       <div>
         Today's Markets:
-        {currentDayIndex == 0 ? marketSequence[0] :
+       {currentDayIndex == 0 ? marketSequence[0] :
         currentDayIndex == 1 ? marketSequence[1]:
         currentDayIndex == 2 ? marketSequence[2]:
         currentDayIndex == 3 ? marketSequence[3]:
