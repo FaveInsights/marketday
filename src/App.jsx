@@ -3,6 +3,7 @@ import React from 'react'
 import Market from './components/Market'
 import MetaTest from './components/MetaTest'
 import Deep from './components/Deep'
+import NewDeep from './components/NewDeep'
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
     <Market />
     <MetaTest />
     <Deep />
+    <NewDeep />
     </>
   )
 }

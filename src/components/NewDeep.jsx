@@ -1,27 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
-const Deep = () => {
+const NewDeep = () => {
   const [currentDayIndex, setCurrentDayIndex] = useState(0);
-
   const marketSequence = [
-    ["Omu-Aran", "Ganmo", "Osi", "Egbe"],
-    ["Iloffa", "Kajola", "Ayedun"],
-    ["Offa", "Otun-Ekiti", "Eruku"], 
-    ["Obada", "Oro"]
+    ["Obada", "Oro"], // Day 0
+    ["Omu-Aran", "Ganmo", "Osi", "Egbe"], // Day 1
+    ["Iloffa", "Kajola", "Ayedun"], //Day 2
+    ["Offa", "Otun-Ekiti", "Eruku"], // Day 3
   ];
 
+
   useEffect(() => {
-    // Function to calculate the current day index (0 for Monday, 1 for Tuesday, etc.)
-    const getCurrentDayIndex = () => {
-      const today = new Date();
-      const dayOfWeek = today.getDay(); // 0 (Sunday) to 6 (Saturday)
-      return (dayOfWeek + 6) % 7; // Convert to 0 (Monday) to 6 (Sunday), then modulo 4
-    };
-
-    // Set the initial day index
-    setCurrentDayIndex(getCurrentDayIndex());
-
-    // Function to update the day index at midnight
+    // Function to update the day index
     const updateDayIndex = () => {
       setCurrentDayIndex((prevIndex) => (prevIndex + 1) % 4); // Cycle through 0, 1, 2, 3
     };
@@ -44,8 +34,10 @@ const Deep = () => {
   }, []);
 
   return (
-    <div>
-      <p>Current Day Index(Deep): {currentDayIndex}</p>
+    <>
+    <div className='mt-4'>
+      <p>Current Day Index (NewDeep): {currentDayIndex}</p>
+    </div>
       <div>
         Today's Markets:
         {currentDayIndex == 0 ? marketSequence[0] :
@@ -54,8 +46,8 @@ const Deep = () => {
         currentDayIndex == 3 ? marketSequence[3]:
         null}
       </div>
-    </div>
+    </>
   );
 };
 
-export default Deep;
+export default NewDeep;
